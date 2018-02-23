@@ -32,4 +32,9 @@ dependencies {
     compile 'com.google.guava:guava:22.0-android'
     compile 'com.blankj:utilcode:1.9.3'
 
+
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'org.greenrobot:eventbus:3.1.1'
+
 }

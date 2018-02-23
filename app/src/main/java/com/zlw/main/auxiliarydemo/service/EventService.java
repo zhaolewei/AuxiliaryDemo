@@ -1,9 +1,6 @@
-package com.zlw.main.auxiliarydemo;
+package com.zlw.main.auxiliarydemo.service;
 
-import android.content.ComponentName;
-import android.content.pm.ActivityInfo;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -11,6 +8,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.zlw.main.auxiliarydemo.utils.AccessibilityServiceHelper;
+import com.zlw.main.auxiliarydemo.utils.Logger;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Locale;
 
@@ -25,13 +27,31 @@ public class EventService extends BaseAccessibilityService {
     @Override
     public void onCreate() {
         super.onCreate();
+        Logger.i(TAG, "=====EventService======onCreate()================");
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onDestroy() {
+        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onDistributeEvent(ServiceControlEvent event) {
+        Logger.i(TAG, "收到事件： %s", event.what.name());
+        switch (event.what) {
+            case TEST_CLICK:
+                if (TextUtils.isEmpty(event.param)) {
+                    Logger.w(TAG, "text is null");
+                    return;
+                }
+                clickTextViewByText(event.param);
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     public void onInterrupt() {

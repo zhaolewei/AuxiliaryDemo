@@ -4,16 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zlw.main.auxiliarydemo.MainActivity">
-
-    <Button
-        android:id="@+id/mBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#66a"
-        android:padding="10dp"
-        android:text="This is a Button" />
+    tools:context="com.zlw.main.auxiliarydemo.ui.MainActivity">
 
     <TextView
         android:id="@+id/mTv"
@@ -22,6 +13,41 @@
         android:layout_margin="10dp"
         android:background="#66a"
         android:padding="10dp"
-        android:text="This is a TextView" />
+        android:text="无障碍服务" />
+
+    <Button
+        android:id="@+id/btnCheckService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#66a"
+        android:padding="10dp"
+        android:text="检测并开启无障碍服务" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#66a"
+            android:padding="10dp"
+            android:text="模拟点击测试" />
+
+        <Button
+            android:id="@+id/btnTestClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#66a"
+            android:padding="10dp"
+            android:text="测试点击" />
+    </LinearLayout>
+
 
 </LinearLayout>

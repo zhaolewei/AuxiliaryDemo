@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.common.collect.Lists;
-import com.zlw.main.auxiliarydemo.Logger;
 
 import java.util.List;
 import java.util.Locale;

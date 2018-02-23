@@ -1,4 +1,4 @@
-package com.zlw.main.auxiliarydemo;
+package com.zlw.main.auxiliarydemo.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.annotation.TargetApi;
@@ -132,6 +132,7 @@ public abstract class BaseAccessibilityService extends AccessibilityService {
 
     /**
      * 点击文本为text的按钮
+     * 经测试该点击无法触发ButterKnife的点击事件
      *
      * @param text
      */

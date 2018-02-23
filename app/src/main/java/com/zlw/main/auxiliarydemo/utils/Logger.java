@@ -1,4 +1,4 @@
-package com.zlw.main.auxiliarydemo;
+package com.zlw.main.auxiliarydemo.utils;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -9,12 +9,9 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.common.base.Joiner;
+import com.zlw.main.auxiliarydemo.BuildConfig;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.Locale;
 
 /**
