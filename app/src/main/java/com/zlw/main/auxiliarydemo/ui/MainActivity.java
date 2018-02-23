@@ -42,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         boolean open = AccessibilityServiceHelper.isEnable(this.getApplicationContext(), EventService.class);
         mTv.setText(String.format("无障碍服务: %s", open));
+        btnTestClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Logger.d(TAG, "点击成功！！！");
+            }
+        });
     }
 
     @Override
@@ -64,8 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 ServiceControlEvent event = new ServiceControlEvent(ServiceControlEvent.ControlType.TEST_CLICK).setParam(btnTestClick.getText().toString());
                 EventBus.getDefault().post(event);
                 break;
-            case R.id.btnTestClick:
-                Logger.d(TAG, "点击成功！！！");
+            default:
                 break;
         }
     }
